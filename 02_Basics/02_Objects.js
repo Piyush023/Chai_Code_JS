@@ -55,3 +55,6 @@ console.log(e)
 console.log(Object.keys(user)); // This will give a array of the keys of the Object.
 console.log(Object.values(user)); // This will give a array of the values of the Object.
 console.log(Object.entries(user)); // This will give a array of the keys and values pair of the Object.
+
+// Object Destructuring - 
+const {age} = user
