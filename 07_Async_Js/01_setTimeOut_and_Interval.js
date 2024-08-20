@@ -1,9 +1,9 @@
 // SetTimeOut and SetInterval
 
 // SetTimeOut - 
-const timeOut = setTimeout(()=>{
+const timeOut = setTimeout(() => {
     console.log('TimeOut After 2 sec.') // This will be printed after a delay of 2sec.
-},2000)
+}, 2000)
 
 clearTimeout(timeOut) // This will immediately clear the Timeout and the output will never be printed.
 
