@@ -22,17 +22,17 @@ function curryWithLimitedArgs(fn) {
         }
     }
 }
-function curryNArgsJoin(fn) {
-    return function nArgsCurried(...args) {
-        if (args.length >= 1) {
-            return function (...args2) {
-                return nArgsCurried.apply(this, args.concat(args2));
-            }
-        } else {
-            return fn.apply(this, args);
-        }
-    }
-}
+// function curryNArgsJoin(fn) {
+//     return function nArgsCurried(...args) {
+//         if (args.length >= 1) {
+//             return function (...args2) {
+//                 return nArgsCurried.apply(this, args.concat(args2));
+//             }
+//         } else {
+//             return fn.apply(this, args);
+//         }
+//     }
+// }
 
 const join = (a, b, c) => {
     return a + b + c;
@@ -48,11 +48,11 @@ const joinWithNArgs = (...args) => {
 }
 
 const curriedJoin = curryWithLimitedArgs(join);
-const curriedNArgsJoin = curryNArgsJoin(joinWithNArgs);
+// const curriedNArgsJoin = curryNArgsJoin(joinWithNArgs);
 
 console.log(curriedJoin(1)(2)(3))
 console.log(curriedJoin(1, 2, 3, 4, 5, 6, 7, 8, 9)) // Types of currying Calls
-console.log(curriedNArgsJoin(1)(2)(3)(4)(5)(6)(7)(8)(9)()) // Need to call the last one with empty args in order to call the else case in Recursion
+// console.log(curriedNArgsJoin(1)(2)(3)(4)(5)(6)(7)(8)(9)()) // Need to call the last one with empty args in order to call the else case in Recursion - This will not work for the N Number of args. Check the below one - 
 
 // Info - This function is for currying of the any num of args - 
 function curryWithAnyNumArgs(fn) {
