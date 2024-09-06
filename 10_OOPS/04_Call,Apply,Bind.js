@@ -9,11 +9,10 @@ class setUserName {
 
 class setUser {
     constructor(name, pass, isLogin) {
-        // setUserName(name) // We can not call this function here becoz it is a class and constructor and we have to make a object of this with a new and then call it.
-        //  This is called without .call() so it's context will be cleared after its execution and the name will not be set in the User Object. To fix this we will use the .call()
+        // setUserName(name) // We can not call this function here becoz it is a class and we need a constructor and we have to make a object of this with a new and then call it.
         
         const userNameInstance = new setUserName(name); // Create an instance of setUserName
-        
+
         this.name = userNameInstance.name; // Now this will work fine and the context of the setUser function is passed to the setUserName function and the context of the setUser will save the name and set it too while the context of the setUserName is destroyed.
 
         this.pass = pass
